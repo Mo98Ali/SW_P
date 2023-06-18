@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<html>
+ <body>
+  <div id='chart' class='chart'”></div>
+  <div id='chart1' class='chart'”></div>
+</body>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+  var graphs = {{ graphJSON | safe }};
+  Plotly.plot('chart',graphs,{});
+  
+  var graphs1 = {{ graphJSON1 | safe }};
+  Plotly.newPlot('chart1',graphs1,{});
+</script>
+</html>
+
+
+
+<div>
+  <form action="" method="POST">
+    {{ form.csrf_token() }}
+    <fieldset class="form-group">
+        <font color="red">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        </font>
+        <div class="form-group">
+            {{form.start_date.label(class="form-control-label")}}
+            {% if form.start_date.errors %}
+            {{form.start_date(class ="form-control is-invalid")}}
+            {% for error in form.start_date.errors %}
+            <div class="invalid-feedback">
+                <span>{{ error }}</span>
+            </div>
+            {% endfor %}
+            {% else %}
+            {{form.start_date(class="form-control is-invalid")}}
+
+            {% endif %}
+        </div>
+        
+        <div class="form-group">
+            
+            {{form.end_date.label(class="form-control-label")}}
+            {% if form.end_date.errors %}
+            {{form.end_date(class ="form-control is-invalid")}}
+            {% for error in form.end_date.errors %}
+            <div class="invalid-feedback">
+                <span>{{ error }}</span>
+            </div>
+            {% endfor %}
+            {% else %}
+            {{form.end_date(class="form-control is-invalid")}}
+
+            {% endif %}
+        </div>
+        <div class ="form-group">
+                {{form.submit(class="btn btn-outline-info mt-3")}}
+
+        </div>
+
+     
+
+    </fieldset>
+</form>
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,230 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<!-- Sleep Diary for the Evening-->
+
+<div>
+    <form action="" method="POST">
+        {{ form.csrf_token() }}
+        <fieldset class="form-group">
+            <legend>Sleeping Diary Morning</legend>
+            <h6>Rate the Questions from 1 (good) to 6 (bad)</h6>
+            <font color = "purple">
+                <h4>All times must be type in like this HH:MM format  e.g   20 Minutes => 00:20</h4>
+                </font>
+           <!--  The Code block afterwards is for the view of the questions
+                important, in the class forms is the functional part of the new question
+                in this html file is only the view and slightly functional like the error if the 
+                field isnt filled out
+
+                For new Questions, copy and paste the following code and change the word "Fragen" 
+                to the new title of the question. Important is to add this new question also in forms 
+                with an identical named variable 
+            //-->
+            <div class="form-group">
+                {{form.sleepy_AwFeeling.label(class="form-control-label")}}
+                {% if form.sleepy_AwFeeling.errors %}
+                {{form.sleepy_AwFeeling(class ="form-control is-invalid")}}
+                {% for error in form.sleepy_AwFeeling.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.sleepy_AwFeeling(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{form.mood.label(class="form-control-label")}}
+                {% if form.mood.errors %}
+                {{form.mood(class ="form-control is-invalid")}}
+                {% for error in form.mood.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.mood(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+              <div class="form-group">
+                {{form.timeLightOff.label(class="form-control-label")}}
+                {% if form.timeLightOff.errors %}
+                {{form.timeLightOff(class ="form-control is-invalid")}}
+                {% for error in form.timeLightOff.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.timeLightOff(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.timeLightOff2S.label(class="form-control-label")}}
+                {% if form.timeLightOff2S.errors %}
+                {{form.timeLightOff2S(class ="form-control is-invalid")}}
+                {% for error in form.timeLightOff2S.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.timeLightOff2S(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.howoAwN.label(class="form-control-label")}}
+                {% if form.howoAwN.errors %}
+                {{form.howoAwN(class ="form-control is-invalid")}}
+                {% for error in form.howoAwN.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.howoAwN(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.howLongTotal.label(class="form-control-label")}}
+                {% if form.howLongTotal.errors %}
+                {{form.howLongTotal(class ="form-control is-invalid")}}
+                {% for error in form.howLongTotal.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.howLongTotal(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.wakeUpTime.label(class="form-control-label")}}
+                {% if form.wakeUpTime.errors %}
+                {{form.wakeUpTime(class ="form-control is-invalid")}}
+                {% for error in form.wakeUpTime.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.wakeUpTime(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                {{form.totalSleepTime.label(class="form-control-label")}}
+                {% if form.totalSleepTime.errors %}
+                {{form.totalSleepTime(class ="form-control is-invalid")}}
+                {% for error in form.totalSleepTime.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.totalSleepTime(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.riseTime.label(class="form-control-label")}}
+                {% if form.riseTime.errors %}
+                {{form.riseTime(class ="form-control is-invalid")}}
+                {% for error in form.riseTime.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.riseTime(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <h6>If no Drug is consumed, type zero and 0:00 </h6>
+
+
+            <div class="form-group">
+                {{form.sleepDrugName.label(class="form-control-label")}}
+                {% if form.sleepDrugName.errors %}
+                {{form.sleepDrugName(class ="form-control is-invalid")}}
+                {% for error in form.sleepDrugName.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.sleepDrugName(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.drugDosis.label(class="form-control-label")}}
+                {% if form.drugDosis.errors %}
+                {{form.drugDosis(class ="form-control is-invalid")}}
+                {% for error in form.drugDosis.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.drugDosis(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.drugTime.label(class="form-control-label")}}
+                {% if form.drugTime.errors %}
+                {{form.drugTime(class ="form-control is-invalid")}}
+                {% for error in form.drugTime.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.drugTime(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+
+
+           
+            <div class ="form-group">
+                	{{form.submit(class="btn btn-outline-info mt-3")}}
+                    
+            </div>
+
+            <font color="red">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                </font>
+
+
+
+        </fieldset>
+    </form>
+
+</div>
+{% endblock %}

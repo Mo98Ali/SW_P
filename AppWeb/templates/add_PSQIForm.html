@@ -1,0 +1,500 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div>
+    <form action="" method="POST">
+        {{ form.csrf_token() }}
+        <fieldset class="form-group">
+            <legend>General Informations about the User</legend>
+            <font color = "purple">
+            <h4>All times must be type in like this HH:MM format  e.g   20 Minutes => 00:20</h4>
+            </font>
+            <div class="form-group">
+                <h6>General Informations</h6>
+                {{form.name.label(class="form-control-label")}}
+                {% if form.name.errors %}
+                {{form.name(class ="form-control is-invalid")}}
+                {% for error in form.name.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.name(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.surename.label(class="form-control-label")}}
+                {% if form.surename.errors %}
+                {{form.surename(class ="form-control is-invalid")}}
+                {% for error in form.surename.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.surename(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.age.label(class="form-control-label")}}
+                {% if form.age.errors %}
+                {{form.age(class ="form-control is-invalid")}}
+                {% for error in form.age.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.age(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            
+            <div class="form-group">
+                {{form.weight.label(class="form-control-label")}}
+                {% if form.weight.errors %}
+                {{form.weight(class ="form-control is-invalid")}}
+                {% for error in form.weight.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.weight(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.gender.label(class="form-control-label")}}
+                {% if form.gender.errors %}
+                {{form.gender(class ="form-control is-invalid")}}
+                {% for error in form.gender.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.gender(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.workingSit.label(class="form-control-label")}}
+                {% if form.workingSit.errors %}
+                {{form.workingSit(class ="form-control is-invalid")}}
+                {% for error in form.workingSit.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.workingSit(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.BedTime4Weeks.label(class="form-control-label")}}
+                {% if form.BedTime4Weeks.errors %}
+                {{form.BedTime4Weeks(class ="form-control is-invalid")}}
+                {% for error in form.BedTime4Weeks.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.BedTime4Weeks(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.Time2Sleep.label(class="form-control-label")}}
+                {% if form.Time2Sleep.errors %}
+                {{form.Time2Sleep(class ="form-control is-invalid")}}
+                {% for error in form.Time2Sleep.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.Time2Sleep(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.RiseTime4Weeks.label(class="form-control-label")}}
+                {% if form.RiseTime4Weeks.errors %}
+                {{form.RiseTime4Weeks(class ="form-control is-invalid")}}
+                {% for error in form.RiseTime4Weeks.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.RiseTime4Weeks(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.EffecSleept.label(class="form-control-label")}}
+                {% if form.EffecSleept.errors %}
+                {{form.EffecSleept(class ="form-control is-invalid")}}
+                {% for error in form.EffecSleept.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.EffecSleept(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <h6>0 to 4</h6>
+                {{form.a_30toSleep.label(class="form-control-label")}}
+                {% if form.a_30toSleep.errors %}
+                {{form.a_30toSleep(class ="form-control is-invalid")}}
+                {% for error in form.a_30toSleep.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.a_30toSleep(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.b_wakeups.label(class="form-control-label")}}
+                {% if form.b_wakeups.errors %}
+                {{form.b_wakeups(class ="form-control is-invalid")}}
+                {% for error in form.b_wakeups.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.b_wakeups(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            
+      
+            <div class="form-group">
+                {{form.Toilet.label(class="form-control-label")}}
+                {% if form.Toilet.errors %}
+                {{form.Toilet(class ="form-control is-invalid")}}
+                {% for error in form.Toilet.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.Toilet(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.BreathingProbs.label(class="form-control-label")}}
+                {% if form.BreathingProbs.errors %}
+                {{form.BreathingProbs(class ="form-control is-invalid")}}
+                {% for error in form.BreathingProbs.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.BreathingProbs(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.CoughSnore.label(class="form-control-label")}}
+                {% if form.CoughSnore.errors %}
+                {{form.CoughSnore(class ="form-control is-invalid")}}
+                {% for error in form.CoughSnore.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.CoughSnore(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.cold.label(class="form-control-label")}}
+                {% if form.cold.errors %}
+                {{form.cold(class ="form-control is-invalid")}}
+                {% for error in form.cold.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.cold(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.toWarm.label(class="form-control-label")}}
+                {% if form.toWarm.errors %}
+                {{form.toWarm(class ="form-control is-invalid")}}
+                {% for error in form.toWarm.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.toWarm(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.BadDreams.label(class="form-control-label")}}
+                {% if form.BadDreams.errors %}
+                {{form.BadDreams(class ="form-control is-invalid")}}
+                {% for error in form.BadDreams.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.BadDreams(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.Pain.label(class="form-control-label")}}
+                {% if form.Pain.errors %}
+                {{form.Pain(class ="form-control is-invalid")}}
+                {% for error in form.Pain.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.Pain(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.OtherReasons.label(class="form-control-label")}}
+                {% if form.OtherReasons.errors %}
+                {{form.OtherReasons(class ="form-control is-invalid")}}
+                {% for error in form.OtherReasons.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.OtherReasons(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.OtherFreq.label(class="form-control-label")}}
+                {% if form.OtherFreq.errors %}
+                {{form.OtherFreq(class ="form-control is-invalid")}}
+                {% for error in form.OtherFreq.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.OtherFreq(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.sleepQual4Weeks.label(class="form-control-label")}}
+                {% if form.sleepQual4Weeks.errors %}
+                {{form.sleepQual4Weeks(class ="form-control is-invalid")}}
+                {% for error in form.sleepQual4Weeks.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.sleepQual4Weeks(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            
+           
+            
+                
+                
+            <div class="form-group">
+                <h6>0 to 4</h6>
+                {{form.Drugs.label(class="form-control-label")}}
+                {% if form.Drugs.errors %}
+                {{form.Drugs(class ="form-control is-invalid")}}
+                {% for error in form.Drugs.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.Drugs(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+            
+                {{form.stayAwake.label(class="form-control-label")}}
+                {% if form.stayAwake.errors %}
+                {{form.stayAwake(class ="form-control is-invalid")}}
+                {% for error in form.stayAwake.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.stayAwake(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            
+            <h6>0 to 4</h6>
+               
+           
+            <div class="form-group">
+            
+                {{form.NotEnoughE.label(class="form-control-label")}}
+                {% if form.NotEnoughE.errors %}
+                {{form.NotEnoughE(class ="form-control is-invalid")}}
+                {% for error in form.NotEnoughE.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.NotEnoughE(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.SleepAlone.label(class="form-control-label")}}
+                {% if form.SleepAlone.errors %}
+                {{form.SleepAlone(class ="form-control is-invalid")}}
+                {% for error in form.SleepAlone.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.SleepAlone(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                <h6>Question only for Partner/Flatmate, when question before equals yes, type in every block zero</h6>
+                {{form.a_LoudSnoring.label(class="form-control-label")}}
+                {% if form.a_LoudSnoring.errors %}
+                {{form.a_LoudSnoring(class ="form-control is-invalid")}}
+                {% for error in form.a_LoudSnoring.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.a_LoudSnoring(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.b_StopBreathing.label(class="form-control-label")}}
+                {% if form.b_StopBreathing.errors %}
+                {{form.b_StopBreathing(class ="form-control is-invalid")}}
+                {% for error in form.b_StopBreathing.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.b_StopBreathing(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.c_LegMoving.label(class="form-control-label")}}
+                {% if form.c_LegMoving.errors %}
+                {{form.c_LegMoving(class ="form-control is-invalid")}}
+                {% for error in form.c_LegMoving.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.c_LegMoving(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class="form-group">
+                {{form.d_ConfPerAtN.label(class="form-control-label")}}
+                {% if form.d_ConfPerAtN.errors %}
+                {{form.d_ConfPerAtN(class ="form-control is-invalid")}}
+                {% for error in form.d_ConfPerAtN.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.d_ConfPerAtN(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.e_otherFormsoRsls.label(class="form-control-label")}}
+                {% if form.e_otherFormsoRsls.errors %}
+                {{form.e_otherFormsoRsls(class ="form-control is-invalid")}}
+                {% for error in form.e_otherFormsoRsls.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.e_otherFormsoRsls(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            
+           
+            <div class ="form-group">
+                	{{form.submit(class="btn btn-outline-info mt-3")}}
+            
+
+
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+{% endblock %}

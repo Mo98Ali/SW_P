@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<!-- Sleep Diary for the Evening-->
+
+<div>
+    <form action="" method="POST">
+        {{ form.csrf_token() }}
+        <fieldset class="form-group">
+            <legend>Sleeping Diary Evening</legend>
+            <h6>Rate the Questions from 1 (good) to 6 (bad)</h6>
+            <font color = "purple">
+                <h4>All times must be type in like this HH:MM format  e.g   20 Minutes => 00:20</h4>
+                </font>
+           <!--  The Code block afterwards is for the view of the questions
+                important, in the class forms is the functional part of the new question
+                in this html file is only the view and slightly functional like the error if the 
+                field isnt filled out
+
+                For new Questions, copy and paste the following code and change the word "Fragen" 
+                to the new title of the question. Important is to add this new question also in forms 
+                with an identical named variable 
+            //-->
+            <div class="form-group">
+                {{form.mood.label(class="form-control-label")}}
+                {% if form.mood.errors %}
+                {{form.mood(class ="form-control is-invalid")}}
+                {% for error in form.mood.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.mood(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                {{form.dailyTasks.label(class="form-control-label")}}
+                {% if form.dailyTasks.errors %}
+                {{form.dailyTasks(class ="form-control is-invalid")}}
+                {% for error in form.dailyTasks.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.dailyTasks(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+              <div class="form-group">
+                {{form.sleepAtDay.label(class="form-control-label")}}
+                {% if form.sleepAtDay.errors %}
+                {{form.sleepAtDay(class ="form-control is-invalid")}}
+                {% for error in form.sleepAtDay.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.sleepAtDay(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            
+
+            <div class="form-group">
+                {{form.alcConsumption.label(class="form-control-label")}}
+                {% if form.alcConsumption.errors %}
+                {{form.alcConsumption(class ="form-control is-invalid")}}
+                {% for error in form.alcConsumption.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.alcConsumption(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                {{form.kindOfAlc.label(class="form-control-label")}}
+                {% if form.kindOfAlc.errors %}
+                {{form.kindOfAlc(class ="form-control is-invalid")}}
+                {% for error in form.kindOfAlc.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.kindOfAlc(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+
+
+            <div class="form-group">
+                {{form.Feeling.label(class="form-control-label")}}
+                {% if form.Feeling.errors %}
+                {{form.Feeling(class ="form-control is-invalid")}}
+                {% for error in form.Feeling.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.Feeling(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.Time2Bed.label(class="form-control-label")}}
+                {% if form.Time2Bed.errors %}
+                {{form.Time2Bed(class ="form-control is-invalid")}}
+                {% for error in form.Time2Bed.errors %}
+                <div class="invalid-feedback">
+                    <span>{{ error }}</span>
+                </div>
+                {% endfor %}
+                {% else %}
+                {{form.Time2Bed(class="form-control is-invalid")}}
+
+                {% endif %}
+            </div>
+           
+            <div class ="form-group">
+                	{{form.submit(class="btn btn-outline-info mt-3")}}
+
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+{% endblock %}
